@@ -1,0 +1,133 @@
+/* Block example */
+
+
+//Mobile version
+
+.example {
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: map-get($text-color, gray);
+}
+
+.example__wrapper {
+  box-sizing: border-box;
+  width: 320px;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 35px;
+
+  background-color: map-get($bg-color, gray-light);
+}
+
+.example__title {
+  margin: 0;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font: inherit;
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 400;
+  color: map-get( $text-color, black );
+}
+
+.example__text {
+  margin: 0;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+//Tablet version
+
+@media ( min-width: $tablet-width ) {
+
+  .example__wrapper {
+    position: relative;
+
+    width: 768px;
+    padding: 0;
+    padding-top: 50px;
+
+    background-color: transparent;
+  }
+
+  .example__wrapper::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+
+    width: 100%;
+    height: 460px;
+
+    content: '';
+    background-color: map-get( $bg-color, gray-light );
+  }
+
+  .example__inner:last-child {
+    padding-bottom: 65px;
+
+    background: linear-gradient(to top, transparent 460px, #ffffff 183px), 
+                linear-gradient(to right, transparent 50%, map-get( $bg-color, gray-dark ) 50%)
+    ;
+  }
+  
+  .example__title {
+    margin-bottom: 55px;
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    font-size: 60px;
+  }
+
+  .example__text {
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 60px;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+}
+
+
+//Desktop version
+
+@media ( min-width: $desktop-width ) {
+
+  .example__wrapper {
+    display: flex;
+    width: 1440px;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-left: 110px;
+  }
+
+  .example__wrapper::before {
+    width: 100%;
+  }
+
+  .example__title {
+    padding: 0;
+    padding-top: 65px;
+    margin-bottom: 140px;
+  }
+
+  .example__text {
+    width: 450px;
+    padding: 0;
+    margin-bottom: 65px; 
+  }
+}

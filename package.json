@@ -1,0 +1,58 @@
+{
+  "name": "cat-energy",
+  "version": "14.0.0",
+  "private": true,
+  "description": "Личный проект  «Cat Energy» от HTML Academy",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "gulp-webp": "^4.0.1",
+    "node-sass": "^4.12.0",
+    "posthtml-include": "^1.3.2",
+    "readable-stream": "^3.4.0"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint .",
+    "test": "npm run editorconfig",
+    "build": "gulp build",
+    "server": "gulp server",
+    "start": "npm run server"
+  },
+  "editorconfig-cli": [
+    "*.json",
+    "source/*.html"
+  ],
+  "engines": {
+    "node": "10.15.1"
+  },
+  "main": "gulpfile.js",
+  "dependencies": {
+    "cwebp": "^2.0.4",
+    "cwebp-bin": "^5.1.0",
+    "del": "^5.1.0",
+    "gulp-svgmin": "^2.2.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
+}

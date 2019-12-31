@@ -1,0 +1,69 @@
+/* Block page-header */
+
+
+//Mobile version
+
+
+.page-header__wrapper {
+  position: relative;
+
+  box-sizing: border-box;
+  width: 320px;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 10px;
+}
+
+.page-header__logo {
+  padding-left: 20px;
+}
+
+.page-header__nav {
+  padding-top: 15px;
+}
+
+
+//Tablet version
+
+@media ( min-width: $tablet-width ) {
+
+  .page-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 768px;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .page-header__logo {
+    padding: 0;
+  }
+
+  .page-header__nav {
+    align-self: center;
+  }
+}
+
+
+//Desktop version 
+
+@media ( min-width: $desktop-width ) {
+
+  .page-header__wrapper {
+    position: relative;
+
+    width: 1440px;
+    padding-top: 55px;
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+
+  .page-header__nav {
+    margin-left: auto;
+    padding-top: 5px;
+  }
+
+}
+

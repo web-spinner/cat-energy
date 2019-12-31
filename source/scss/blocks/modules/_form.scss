@@ -1,0 +1,262 @@
+/* Block form */
+
+
+//Mobile version
+
+
+.form__label {
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;  
+  color: map-get($text-color, black-light);
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+
+.form__input {
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;  
+  color: map-get($text-color, gray);
+  text-transform: uppercase;
+
+  border: 1px solid rgba( map-get($border-color, silver-light), 0.5 );
+
+  & + .form__icon,
+  & + .form__icon {
+    fill: map-get($icon-color, static);
+  }
+    
+  &::placeholder {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    border: 1px solid rgba( map-get($border-color, silver-light), 1 );
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border: 1px solid map-get($border-color, gray);
+  }
+
+  &:focus + .form__icon,
+  &:active + .form__icon {
+    fill: map-get($icon-color, event);
+  }
+
+  &--error {
+    border: 1px solid map-get($border-color, red);
+  }
+  
+  &--error + .form__icon {
+    fill: map-get($icon-color, error);
+  }
+}
+
+
+.form__input--radio {
+
+  & + label {
+    position: relative;
+
+    padding-left: 45px;
+  }
+
+
+  & + label::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin-top: -15px;
+
+    content: '';
+    border: 1px solid map-get($border-color, silver-light); 
+    border-radius: 50%;
+  }
+
+
+  & + label::after {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+
+    display: none;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    margin-left: -6px;
+
+    content: '';
+    background-color: map-get($bg-color, green-light);
+    border-radius: 50%;
+  }
+
+
+  &:checked + label::after {
+    display: block;
+  }
+
+
+  & + label:hover::before,
+  &:focus + label::before {
+    border-color: map-get($border-color, silver);
+  }
+
+
+  & + label:active {
+    opacity: 0.3;
+  }
+}
+
+.form__input--checkbox {
+
+  & + label {
+    position: relative;
+
+    padding-left: 46px;
+  }
+
+  
+  & + label::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin-top: -15px;
+
+    content: '';
+    border: 1px solid map-get($border-color, silver-light);
+  } 
+
+
+  & + label::after {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+
+    display: none;
+    width: 21px;
+    height: 16px;
+    margin-top: -8px;
+
+    content: '';
+    background-image: url("../img/icon/tick.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+
+
+  &:checked + label::after {
+    display: block;  
+  }
+
+
+  & + label:hover::before,
+  &:focus + label::before {
+    border-color: map-get($border-color, silver);
+  }
+
+
+  & + label:active {
+    opacity: 0.3;
+  }
+}
+
+.form__textarea {
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: map-get($text-color, gray);
+  text-transform: uppercase;
+  
+  &--comment {
+    box-sizing: border-box;
+    width: 280px;
+    min-height: 150px;
+
+    resize: none;
+    border: 1px solid rgba( map-get($border-color, silver-light), 0.5 );
+
+    &::placeholder {
+      text-align: center;
+      text-transform: uppercase;
+    }    
+
+    &:hover {
+      border: 1px solid rgba( map-get($border-color, silver-light), 1 );
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      border: 1px solid map-get($border-color, gray);
+    }
+
+    &--error {
+      border: 1px solid map-get($border-color, red);
+    }
+  }
+}
+
+
+//Tablet version
+
+@media ( min-width: $tablet-width ) {
+
+  .form__label,
+  .form__input {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .form__input--radio {
+
+    & + label {
+      padding-left: 60px;
+    }
+
+    & + label::before {
+      width: 38px;
+      height: 38px;
+      margin-top: -20px;
+    }
+
+
+    & + label::after {
+      left: 20px;
+
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      margin-left: -9px;
+    }
+  }
+
+  .form__textarea {
+    font-size: 20px;
+    line-height: 30px;
+
+    &--comment {
+      width: 631px;
+      min-height: 174px;
+    }
+
+    &::placeholder {
+      text-align: left;
+    }
+  }
+}

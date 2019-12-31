@@ -1,0 +1,55 @@
+/* Block logo */
+
+
+//Mobile version
+
+
+.logo:not(.logo--disabled) {
+
+  cursor: pointer;
+
+  &:hover img,
+  &:focus img {
+    opacity: 0.8;
+  }
+
+  &:active img {
+    opacity: 0.3;
+  }
+}
+
+
+.logo img {
+
+  width: 191px;
+  height: 38px;
+}
+
+.logo--footer img {
+  width: 128px;
+  height: 24px;
+}
+
+
+//Tablet version
+
+@media ( min-width: $tablet-width ) {
+
+  .logo img {
+
+    width: 173px;
+    height: 58px;
+  }
+}
+
+
+//Desktop version
+
+@media ( min-width: $desktop-width ) {
+
+  .logo img {
+
+    width: 202px;
+    height: 59px;
+  }
+}

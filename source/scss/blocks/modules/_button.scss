@@ -1,0 +1,106 @@
+/* Block button */
+
+
+//Mobile version
+
+.button {
+  display: block;
+  box-sizing: border-box;
+  width: 280px;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.button--green {
+
+  color: map-get($text-color, white);
+
+  background-color: map-get($btn-color, green-static);
+
+  &:hover,
+  &:focus {
+    background-color: map-get($btn-color, green-event);
+  }
+
+  &:active {
+    color: rgba( map-get($text-color, white), 0.3 );
+
+    background-color: map-get($btn-color, green-event);
+  }
+
+}
+
+.button--gray {
+
+  color: map-get($text-color, gray);
+
+  background-color: map-get($btn-color, gray-static);
+
+  &:hover,
+  &:focus {
+    background-color: map-get($btn-color, gray-event);
+  }
+
+  &:active {
+    color: rgba( map-get($text-color, gray), 0.3 );
+
+    background-color: map-get($btn-color, gray-event);
+  }
+}
+
+
+
+.button--program {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+
+//Tablet version 
+
+@media ( min-width: $tablet-width ) {
+
+  .button--program {
+    width: 245px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .button--product {
+    width: 100%;
+  }
+
+  .button--additional {
+    width: 100%;
+  }
+
+  .button--submit {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+
+//Desktop version
+
+@media ( min-width: $desktop-width ) {
+
+  .button--additional {
+    width: 245px;
+  }
+}

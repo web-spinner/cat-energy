@@ -1,0 +1,56 @@
+//Mobile version
+
+.box--decoration {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-width: 320px;
+  padding-left: 20px;
+
+  &::before, &::after {
+    content: '';
+
+    display: block;
+    flex-grow: 1;
+    height: 3px;
+
+    background-color: map-get($bg-color, green);
+  }
+
+  &::before {
+    display: none;
+    min-width: 31px;
+    flex-grow: 0;
+    margin-right: 40px;
+  }
+}
+
+
+//Tablet version
+
+@media (min-width: $tablet-width) {
+  
+  .box--decoration {
+
+    min-width: 768px;
+    padding: 0;
+
+    &::before {
+      display: block;
+    }
+  }    
+}
+
+
+//Desktop version 
+
+@media ( min-width: $desktop-width ) {
+
+  .box--decoration {
+    min-width: 1440px;
+
+    &::before {
+      width: 70px;
+    }
+  }
+}
