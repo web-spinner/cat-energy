@@ -1,7 +1,6 @@
 {
   "name": "cat-energy",
-  "version": "14.0.0",
-  "private": true,
+  "version": "1.0.0",
   "description": "Личный проект  «Cat Energy» от HTML Academy",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
@@ -26,27 +25,12 @@
     "readable-stream": "^3.4.0"
   },
   "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint .",
     "test": "npm run editorconfig",
     "build": "gulp build",
     "server": "gulp server",
     "start": "npm run server"
   },
-  "editorconfig-cli": [
-    "*.json",
-    "source/*.html"
-  ],
-  "engines": {
-    "node": "10.15.1"
-  },
   "main": "gulpfile.js",
-  "dependencies": {
-    "cwebp": "^2.0.4",
-    "cwebp-bin": "^5.1.0",
-    "del": "^5.1.0",
-    "gulp-svgmin": "^2.2.0"
-  },
   "author": "",
   "license": "ISC",
   "browserslist": [
