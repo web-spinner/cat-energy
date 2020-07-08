@@ -16,6 +16,7 @@ var del = require("del");
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
 var pipeline = require('readable-stream').pipeline; 
+var ghPages = require('gulp-gh-pages');
 
 
 
@@ -98,6 +99,12 @@ gulp.task('sprite', function(){
 
 gulp.task("clean", function () {
   return del("build");
+});
+
+
+gulp.task('deploy', function() {
+    return gulp.src('./build/**/*')
+      .pipe(ghPages());
 });
 
 gulp.task('serve', function(done){
