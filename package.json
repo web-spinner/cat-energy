@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Личный проект  «Cat Energy» от HTML Academy",
   "devDependencies": {
-    "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "gh-pages": "^3.1.0",
@@ -35,11 +34,5 @@
   },
   "main": "gulpfile.js",
   "author": "",
-  "license": "ISC",
-  "browserslist": [
-    "last 2 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ]
+  "license": "ISC"
 }

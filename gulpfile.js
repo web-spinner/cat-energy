@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-var autoprefixer = require('autoprefixer');
+var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var server = require('browser-sync').create();
 var plumber = require('gulp-plumber');
@@ -29,12 +29,6 @@ gulp.task("html", function () {
 });
 
 gulp.task('css', function(done){
-  var plugins = [
-    autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    })
-  ];
 
   gulp.src('./source/scss/style.scss')
     .pipe(plumber())
@@ -43,9 +37,9 @@ gulp.task('css', function(done){
     .pipe( sass({
       errorLogToConsole: true
     }) )
-    .pipe(sourcemaps.write('./'))
-    .pipe( gulp.dest('./build/css/') )
-    .pipe(postcss(plugins))
+    .pipe(autoprefixer({
+      cascade: false
+    }))
     .pipe( csso() )
     .pipe( rename({suffix: '.min'}) )
     .pipe(sourcemaps.write('./'))
@@ -64,7 +58,7 @@ gulp.task('js', function () {
 });
 
 gulp.task("fonts", function () {
-  return gulp.src("./source/fonts/**/*.{eot,otf,ttf,woff,woff2,svg}", {base: "source"})
+  return gulp.src("./source/fonts/**/*.{woff,woff2}", {base: "source"})
     .pipe(gulp.dest("build"));
 });
 
@@ -102,7 +96,7 @@ gulp.task("clean", function () {
 
 
 gulp.task('deploy', function() {
-  return ghpages.publish('build', function(err) {});
+  return ghpages.publish('build', function(err){});
 });
 
 gulp.task('serve', function(done){
@@ -125,7 +119,7 @@ gulp.task('build', gulp.series(['clean', 'fonts', 'images', 'webp', 'sprite', 'h
 gulp.task('watch', function(){
   gulp.watch('./source/fonts/**/*', gulp.series( ['fonts', 'reload']) );
   gulp.watch('./source/img/**/*', gulp.series( ['images', 'webp', 'sprite', 'reload'] ));
-  gulp.watch('./**/*.{html, js, scss, sass}', gulp.series( ['html', 'css', 'js', 'reload'] ));
+  gulp.watch('./source/**/*.{html,js,scss,sass}', gulp.series( ['html', 'css', 'js', 'reload'] ));
 });
 
 gulp.task('server', gulp.series( [ 'build', gulp.parallel('serve', 'watch') ] ));
