@@ -1,11 +1,8 @@
 @font-face {
 	font-family: 'Oswald';
-	src: url('../fonts/Oswald/Oswald-Regular.eot');
 	src: local('☺'), 
     url('../fonts/Oswald/Oswald-Regular.woff2') format('woff2'), 
-    url('../fonts/Oswald/Oswald-Regular.woff') format('woff'), 
-    url('../fonts/Oswald/Oswald-Regular.ttf') format('truetype'), 
-    url('../fonts/Oswald/Oswald-Regular.svg') format('svg');
+    url('../fonts/Oswald/Oswald-Regular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
   font-display: swap;
@@ -13,12 +10,9 @@
 
 @font-face {
 	font-family: 'Oswald';
-	src: url('../fonts/Oswald/Oswald-Medium.eot');
 	src: local('☺'), 
     url('../fonts/Oswald/Oswald-Medium.woff2') format('woff2'), 
-    url('../fonts/Oswald/Oswald-Medium.woff') format('woff'), 
-    url('../fonts/Oswald/Oswald-Medium.ttf') format('truetype'), 
-    url('../fonts/Oswald/Oswald-Medium.svg') format('svg');
+    url('../fonts/Oswald/Oswald-Medium.woff') format('woff'); 
 	font-weight: 500;
 	font-style: normal;
   font-display: swap;
